@@ -1,10 +1,15 @@
 'use strict';
 
+//----------React with components
 
-// React.createElement(component, props, ...children)
-ReactDOM.render(React.createElement(
-  'h1', //component
-  null, //props
-  'Hello, world!' //children
-), document.getElementById('my-app'));
+class Hello extends React.Component {
+    render() {
+        return React.createElement('div', null, `Hello ${this.props.toWhat}`);
+    }
+}
+
+ReactDOM.render(
+    React.createElement(Hello, {toWhat: 'Orange'}, null),
+    document.getElementById('my-app')
+);
 
